@@ -8,10 +8,12 @@
 
 
 @media screen and (min-width:801px) {
+
     /* ________________DESKTOP_HEAD________________ */
-    li{
+    li {
         display: none;
     }
+
     input {
         margin-left: 1.25vw;
         margin-top: 1.25vw;
@@ -49,9 +51,11 @@
         cursor: pointer;
         color: black;
     }
-    .icon{
+
+    .icon {
         display: none;
     }
+
     /* ________________DESKTOP_MAIN________________ */
     main {
         display: flex;
@@ -84,6 +88,7 @@
         border: 0.087vw solid rgba(229, 229, 229, 1);
         color: rgba(198, 198, 198, 1);
     }
+
     .selected {
         background-color: #833ae0;
         color: white;
@@ -101,8 +106,9 @@
 
     button:hover {
         cursor: pointer;
-        background-color: #833ae0;                              
+        background-color: #833ae0;
     }
+
     .container {
         display: flex;
         flex-direction: column;
@@ -153,16 +159,17 @@
 @media screen and (min-width:320px) and (max-width:800px) {
 
     /*________________MOBILE_HEAD________________*/
-    .icon2{
+    .icon2 {
         width: 5vw;
         height: 1vw;
         background-color: #833ae0;
     }
-    #clicked{
+
+    #clicked {
         display: none;
     }
 
-    ul{
+    ul {
         display: none;
         position: absolute;
         width: 50vw;
@@ -172,13 +179,16 @@
         font-size: 4vw;
         justify-content: space-evenly;
     }
-    li{
+
+    li {
         border-bottom: 0.5vw solid white;
         padding: 6vw;
     }
-    li:hover{
+
+    li:hover {
         cursor: pointer;
     }
+
     .top {
         background-color: rgba(245, 245, 246, 1);
         align-items: center;
@@ -209,22 +219,26 @@
         font-size: 2.3vw;
         margin-right: 5vw;
     }
-    .icon-container{
+
+    .icon-container {
         height: 5vw;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         margin-left: 3vw;
     }
-    .icon-container:hover{
+
+    .icon-container:hover {
         cursor: pointer;
-       
+
     }
-    .icon{
-       width: 5vw;
-       height: 1vw;
-       background-color: gray;
+
+    .icon {
+        width: 5vw;
+        height: 1vw;
+        background-color: gray;
     }
+
     /* ________________MOBILE_MAIN________________ */
     main {
         display: flex;
@@ -246,12 +260,14 @@
     .buttons-Left .buttons-Right {
         display: flex;
     }
+
     #selection-left,
     #selection-right {
         width: 14vw;
         height: 7vw;
         border: 0;
     }
+
     .selected {
         border: 0;
         width: 10vw;
@@ -271,10 +287,10 @@
     }
 
     p {
-        margin-bottom: 0.868vw; 
+        margin-bottom: 0.868vw;
         margin-top: 3.5vw;
     }
-    
+
 
     .input-container {
         width: 60vw;

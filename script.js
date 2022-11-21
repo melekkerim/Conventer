@@ -1,42 +1,42 @@
-const inputLeft = document.getElementById("inputLeft")
-const inputRight = document.getElementById("inputRight")
+const inputLeft = document.querySelector(".inputLeft")
+const inputRight = document.querySelector(".inputRight")
 const menuIcon=document.querySelector(".icon-container")
-const clickedIcon=document.getElementById("clicked")
-const menu=document.querySelector("ul")
+const clickedIcon = document.getElementById("clicked")
+const menu = document.querySelector("ul")
 inputLeft.addEventListener('input', () => {
-  if (inputLeft.value[1] == "." || inputLeft.value[1] == "," ) {} else if (inputLeft.value[0] == 0 && inputLeft.value.length > 1) {
-      inputLeft.value = inputLeft.value[1];
+  if (inputLeft.value[1] == "." || inputLeft.value[1] == ",") { } else if (inputLeft.value[0] == 0 && inputLeft.value.length > 1) {
+    inputLeft.value = inputLeft.value[1];
   }
-  else if(inputLeft.value[0]==="."){
-   inputLeft.value=""
-}
-else if(inputLeft.value[0]===","){
-inputLeft.value=""
-}
+  else if (inputLeft.value[0] === ".") {
+    inputLeft.value = ""
+  }
+  else if (inputLeft.value[0] === ",") {
+    inputLeft.value = ""
+  }
 })
 inputRight.addEventListener('input', () => {
-  if (inputRight.value[1] == "." || inputRight.value[1] == ",") {} else if (inputRight.value[0] == 0 && inputRight.value.length > 1) {
-      inputRight.value = inputRight.value[1];
+  if (inputRight.value[1] == "." || inputRight.value[1] == ",") { } else if (inputRight.value[0] == 0 && inputRight.value.length > 1) {
+    inputRight.value = inputRight.value[1];
   }
-  else if(inputRight.value[0]==="."){
-    inputRight.value=""
+  else if (inputRight.value[0] === ".") {
+    inputRight.value = ""
   }
-  else if(inputRight.value[0]===","){
-    inputRight.value=""
+  else if (inputRight.value[0] === ",") {
+    inputRight.value = ""
   }
-  })
+})
 
-menuIcon.addEventListener("click",()=>{
-  menuIcon.style.display="none"
-  menu.style.display="block"
-  clickedIcon.style.display="flex"
+menuIcon.addEventListener("click", () => {
+  menuIcon.style.display = "none"
+  menu.style.display = "block"
+  clickedIcon.style.display = "flex"
 })
-clickedIcon.addEventListener("click",()=>{
-  menuIcon.style.display="flex"
-  menu.style.display="none"
-  clickedIcon.style.display="none"
+clickedIcon.addEventListener("click", () => {
+  menuIcon.style.display = "flex"
+  menu.style.display = "none"
+  clickedIcon.style.display = "none"
 })
-let from = 'RUB',to = 'USD'
+let from = 'RUB', to = 'USD'
 let numberMask1 = IMask(inputLeft, {
   mask: Number,
   scale: 5,
@@ -57,26 +57,16 @@ let numberMask2 = IMask(inputRight, {
   radix: '.',
   mapToRadix: [','],
 });
-
-function commify(n) {
-  var parts = n.toString().split(".");
-  const numberPart = parts[0];
-  const decimalPart = parts[1];
-  const thousands = /\B(?=(\d{3})+(?!\d))/g;
-  return (
-    numberPart.replace(thousands, " ") + (decimalPart ? "." + decimalPart : "")
-  );
-}
 function inputValue() {
   fetch(`https://api.exchangerate.host/latest?base=${from}&symbols=${to}`)
     .then(response => response.json())
     .then(data => {
-      if(inputLeft.value==""){
-        inputRight.value=""
+      if (inputLeft.value == "") {
+        inputRight.value = ""
       }
-      else{
-      inputRight.value = inputLeft.value.replace(/ /g, "") * Number(data.rates[Object.keys(data.rates)[0]])
-      inputRight.value = commify(inputRight.value)
+      else {
+        inputRight.value = inputLeft.value.replace(/ /g, "") * Number(data.rates[Object.keys(data.rates)[0]])
+        inputRight.value = inputRight.value
       }
     })
     .catch(error => {
@@ -87,12 +77,12 @@ function outputValue() {
   fetch(`https://api.exchangerate.host/latest?base=${to}&symbols=${from}`)
     .then(response => response.json())
     .then(data => {
-      if(inputRight.value==""){
-        inputLeft.value=""
+      if (inputRight.value == "") {
+        inputLeft.value = ""
       }
-      else{
-      inputLeft.value = inputRight.value.replace(/ /g, "") * Number(data.rates[Object.keys(data.rates)[0]])
-      inputLeft.value = commify(inputLeft.value)
+      else {
+        inputLeft.value = inputRight.value.replace(/ /g, "") * Number(data.rates[Object.keys(data.rates)[0]])
+        inputLeft.value = inputLeft.value
       }
     })
     .catch(error => {
@@ -101,6 +91,7 @@ function outputValue() {
 }
 inputLeft.addEventListener('input', inputValue)
 inputRight.addEventListener('input', outputValue)
+
 let leftBtn = document.querySelectorAll(".buttons1 button")
 leftBtn.forEach((item) =>
   item.addEventListener('click', () => {
