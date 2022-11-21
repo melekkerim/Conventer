@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"
+        integrity="sha512-Eezs+g9Lq4TCCq0wae01s9PuNWzHYoCMkE97e2qdkYthpI0pzC3UGB03lgEHn2XM85hDOUF6qgqqszs+iXU4UA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <title>Converter</title>
+</head>
+
+<body>
+    <div class="top">
+        <div class="icon-container">
+            <div class="icon"></div>
+            <div class="icon"></div>
+            <div class="icon"></div>
+            </div>
+            <div class="icon-container" id="clicked">
+                <div class="icon2"></div>
+                <div class="icon2"></div>
+                <div class="icon2"></div>
+                </div>
+        <img class="logo" src="./img1.svg">
+        <a>Bank</a>
+        <a>Business</a>
+        <a>Investments</a>
+        <a>Insurance</a>
+        <a>Mobile</a>
+        <a>Trips</a>
+        <a>Entertainment</a>
+        <button class="signIn">Sign in</button>
+      
+    </div>
+    <ul class="menu">
+        <li>Bank</li>
+        <li>Business</li>
+        <li>Investments</li>
+        <li>Insurance</li>
+        <li>Mobile</li>
+        <li>Trips</li>
+        <li>Entertainment</li>
+        </ul>
+    <main>
+        <div class="menu"></div>
+        <div class="title">
+            <h1>Currency converter online</h1>
+        </div>
+        <div class="main-part">
+            <div class="container">
+                <p>I have</p>
+                <div class="buttons1">
+                    <button id="selection-left" class="selected">RUB</button>
+                    <button id="selection-left">USD</button>
+                    <button id="selection-left">EUR</button>
+                    <button id="selection-left">GBP</button>
+                </div>
+                <div class="input-container">
+                    <input id="inputLeft"  placeholder="0">
+                    <div class="online-price"></div>
+                </div>
+            </div>
+            <div class="container">
+                <p>I want to buy</p>
+                <div class="buttons2">
+                    <button id="selection-right">RUB</button>
+                    <button id="selection-right" class="selected">USD</button>
+                    <button id="selection-right">EUR</button>
+                    <button id="selection-right">GBP</button>
+                </div>
+                <div class="input-container">
+                    <input id="inputRight" placeholder="0">
+                    <div class="online-currency"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="imask.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
